@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+	
+<table>
+	
+@foreach( var opening in CurrentPage.OpeningTimes)
+{
+	<tr>
+		<td>@opening.name</td>
+		@if( opening.scheduled == "true" ) {
+			<td>@opening.open</td>
+			<td>@opening.close</td>
+				
+			if( opening.open2 != null && !string.IsNullOrEmpty(opening.open2.ToString()) )
+			{
+				<td>@opening.open2</td>	
+				<td>@opening.close2</td>					
+			}
+				
+		}
+	
+	</tr>
+}
+
+</table>
+	
