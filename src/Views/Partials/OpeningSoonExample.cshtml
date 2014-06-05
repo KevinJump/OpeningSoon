@@ -1,19 +1,19 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 	
-<table>
+<table itemprop="openingHoursSpecification" itemscope="" itemtype="http://schema.org/OpeningHoursSpecification">
 	
 @foreach( var opening in CurrentPage.OpeningTimes)
 {
 	<tr>
-		<td>@opening.name</td>
+		<td itemprop="dayOfWeek" datetime="@opening.name">@opening.name</td>
 		@if( opening.scheduled == "true" ) {
-			<td>@opening.open</td>
-			<td>@opening.close</td>
+			<td itemprop="opens">@opening.open</td>
+			<td itemprop="closes">@opening.close</td>
 				
 			if( opening.open2 != null && !string.IsNullOrEmpty(opening.open2.ToString()) )
 			{
-				<td>@opening.open2</td>	
-				<td>@opening.close2</td>					
+				<td itemprop="opens">@opening.open2</td>	
+				<td itemprop="closes">@opening.close2</td>					
 			}
 				
 		}
@@ -22,4 +22,3 @@
 }
 
 </table>
-	
