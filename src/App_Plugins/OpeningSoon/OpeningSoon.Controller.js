@@ -1,9 +1,9 @@
 angular.module("umbraco")
 	.controller("Jumoo.OpeningSoonController", 
-	function($scope, assetsService) {
+	function($scope, assetsService, localizationService) {
 	
 		assetsService.loadCss("/App_Plugins/OpeningSoon/Scripts/jquery.timepicker.css");
-	
+		
 		$scope.resetDays = function()
 		{
 			$scope.model.value = [
@@ -14,7 +14,15 @@ angular.module("umbraco")
 				{ 'name': 'Friday',   'scheduled': true, 'open': '',  'close' : '' },
 				{ 'name': 'Saturday', 'scheduled': true, 'open': '',  'close' : '' },
 				{ 'name': 'Sunday',   'scheduled': true, 'open': '',  'close' : '' }
-			]; 
+			];
+
+			$scope.model.value[0].name = localizationService.dictionary['openingsoon_monday'] || $scope.model.value[0].name;
+			$scope.model.value[1].name = localizationService.dictionary['openingsoon_tuesday'] || $scope.model.value[1].name;
+			$scope.model.value[2].name = localizationService.dictionary['openingsoon_wednesday'] || $scope.model.value[2].name;
+			$scope.model.value[3].name = localizationService.dictionary['openingsoon_thursday'] || $scope.model.value[3].name;
+			$scope.model.value[4].name = localizationService.dictionary['openingsoon_friday'] || $scope.model.value[4].name;
+			$scope.model.value[5].name = localizationService.dictionary['openingsoon_saturday'] || $scope.model.value[5].name;
+			$scope.model.value[6].name = localizationService.dictionary['openingsoon_sunday'] || $scope.model.value[6].name;
 		}
 
 		if ( !$scope.model.value ) { $scope.resetDays() ; }
@@ -57,8 +65,8 @@ angular.module("umbraco")
 					scope.$apply(function() {
 						var mytime = element.timepicker('getTime', new Date());
 						var timestring = 
-							("0" + mytime.getHours()).substr(-2,2) + ":" + 
-							("0" + mytime.getMinutes()).substr(-2,2) ; 
+							("0" + (mytime != null ? mytime.getHours() : "0")).substr(-2,2) + ":" + 
+							("0" + (mytime != null ? mytime.getMinutes() : "0")).substr(-2,2) ; 
 						controller.$setViewValue(timestring);
 						});
 				});
