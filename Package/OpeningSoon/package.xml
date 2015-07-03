@@ -52,10 +52,30 @@
       <orgName>en-US.xml</orgName>
     </file>
     <file>
+      <guid>da.xml</guid>
+      <orgPath>/App_Plugins/OpeningSoon/Lang/</orgPath>
+      <orgName>da.xml</orgName>
+    </file>
+    <file>
+      <guid>en.xml</guid>
+      <orgPath>/App_Plugins/OpeningSoon/Lang/</orgPath>
+      <orgName>en.xml</orgName>
+    </file>
+    <file>
+      <guid>en_us.xml</guid>
+      <orgPath>/App_Plugins/OpeningSoon/Lang/</orgPath>
+      <orgName>en_us.xml</orgName>
+    </file>
+    <file>
       <guid>OpeningSoonExample.cshtml</guid>
       <orgPath>/Views/Partials</orgPath>
       <orgName>OpeningSoonExample.cshtml</orgName>
     </file>
+	<file>
+      <guid>OpeningSoonInstaller.dll</guid>
+      <orgPath>/Bin</orgPath>
+      <orgName>OpeningSoonInstaller.dll</orgName>
+	</file>
   </files>
   <info>
     <package>
@@ -73,11 +93,13 @@
       <name>Kevin Jump</name>
       <website>http://blog.jumoo.co.uk</website>
     </author>
-    <readme><![CDATA[Opening Times property editor.
+    <readme><![CDATA[Opening Times property editor
+-----------------------------
+A property editor for opening times, and umbraco 7
 
-A version of an opening times property editor that works with umbraco 7.
-
-this has similar functionality to the OpeningHours package, but it uses the fancy new things in umbraco 7.]]></readme>
+Add opening times to a page, and get a nicely rendered table of times, 
+with nice markup so search engines like you. 
+]]></readme>
   </info>
   <DocumentTypes />
   <Templates />
@@ -95,4 +117,7 @@ this has similar functionality to the OpeningHours package, but it uses the fanc
       </PreValues>
     </DataType>
   </DataTypes>
+  <Actions>
+	<Action runat="install" undo="true" alias="OpeningSoon_AddLocalizationStuff" />
+  </Actions>
 </umbPackage>
