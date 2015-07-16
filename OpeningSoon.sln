@@ -24,7 +24,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "src(1)", "http://localhost:
 		SlnRelativePath = "src\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpeningSoonInstaller", "OpeningSoonInstaller\OpeningSoonInstaller.csproj", "{1A8F211D-AF44-443D-8685-4E6BB32F9016}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jumoo.OpeningSoon", "OpeningSoonInstaller\Jumoo.OpeningSoon.csproj", "{1A8F211D-AF44-443D-8685-4E6BB32F9016}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

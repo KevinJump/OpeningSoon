@@ -7,7 +7,7 @@ using System.Xml;
 using Umbraco.Core.Logging;
 
 
-namespace OpeningSoonInstaller
+namespace Jumoo.OpeningSoon.Installer
 {
     /// <summary>
     /// Kudos to the Merchello guys for this approach of merging lang files back into the main

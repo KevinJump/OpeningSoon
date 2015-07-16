@@ -8,7 +8,7 @@ using umbraco.interfaces;
 
 using Umbraco.Core.Configuration;
 
-namespace OpeningSoonInstaller
+namespace Jumoo.OpeningSoon.Installer
 {
     public class AddLocalizationStuff : IPackageAction
     {

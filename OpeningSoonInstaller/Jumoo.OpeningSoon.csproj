@@ -7,8 +7,8 @@
     <ProjectGuid>{1A8F211D-AF44-443D-8685-4E6BB32F9016}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpeningSoonInstaller</RootNamespace>
-    <AssemblyName>OpeningSoonInstaller</AssemblyName>
+    <RootNamespace>Jumoo.OpeningSoon</RootNamespace>
+    <AssemblyName>Jumoo.OpeningSoon</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,6 +33,10 @@
     <Reference Include="interfaces">
       <HintPath>..\Resources\umb7.2.6\interfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Resources\umb7.2.6\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -51,6 +55,7 @@
   <ItemGroup>
     <Compile Include="OpeningSoonPackageActions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyValueConverter.cs" />
     <Compile Include="TranslationHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
