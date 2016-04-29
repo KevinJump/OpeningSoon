@@ -1,24 +1,53 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-	
-<table itemprop="openingHoursSpecification" itemscope="" itemtype="http://schema.org/OpeningHoursSpecification">
-	
-@foreach( var opening in CurrentPage.OpeningTimes)
-{
-	<tr>
-		<td itemprop="dayOfWeek" datetime="@opening.name">@opening.name</td>
-		@if( opening.scheduled == "true" ) {
-			<td itemprop="opens">@opening.open</td>
-			<td itemprop="closes">@opening.close</td>
-				
-			if( opening.open2 != null && !string.IsNullOrEmpty(opening.open2.ToString()) )
-			{
-				<td itemprop="opens">@opening.open2</td>	
-				<td itemprop="closes">@opening.close2</td>					
-			}
-				
-		}
-	
-	</tr>
-}
 
+
+<table itemprop="openingHoursSpecification" itemscope="" itemtype="http://schema.org/OpeningHoursSpecification">
+
+    @foreach (var opening in CurrentPage.OpeningTimes)
+    {
+        <tr>
+            <td itemprop="dayOfWeek" datetime="@opening.name">@opening.name</td>
+            @if (opening.scheduled == "true")
+            {
+                <td itemprop="opens">@opening.open</td>
+                <td itemprop="closes">@opening.close</td>
+
+                if (opening.open2 != null && !string.IsNullOrEmpty(opening.open2.ToString()))
+                {
+                    <td itemprop="opens">@opening.open2</td>
+                    <td itemprop="closes">@opening.close2</td>}
+
+            }
+
+        </tr>
+    }
 </table>
+
+@* using the property value converter, and typed content *@
+@*
+    @using Jumoo.OpeningSoon;
+
+    <table itemprop="openingHoursSpecification" itemscope="" itemtype="http://schema.org/OpeningHoursSpecification">
+    @if (Model.Content.HasValue("OpeningTimes"))
+    {
+        var times = Model.Content.GetPropertyValue<OpeningSoonModel>("OpeningTimes");
+        foreach (var time in times)
+        {
+            <tr>
+                <td itemprop="dayOfWeek" datetime="@time.Weekday">@time.Weekday</td>
+                @if (time.IsScheduled)
+                {
+                    <td itemprop="opens">@time.Open</td>
+                    <td itemprop="closes">@time.Close</td>
+
+                    if (!string.IsNullOrWhiteSpace(time.Open2))
+                    {
+                        <td itemprop="opens">@time.Open2</td>
+                        <td itemprop="closes">@time.Close2</td>
+                    }
+                }
+            </tr>
+        }
+    }
+    </table>
+*@
