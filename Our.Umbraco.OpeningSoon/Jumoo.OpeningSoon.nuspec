@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Jumoo.OpeningSoon</id>
+    <version>8.0</version>
+    <title></title>
+    <authors>Kevin Jump</authors>
+    <owners>Jumoo</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Opening Times Editor for Umbraco 8</description>
+    <summary></summary>
+    <releaseNotes>
+      <![CDATA[8.0 - Umbraco 8 Release]]>
+    </releaseNotes>
+    <tags>umbraco</tags>
+  </metadata>
+  <files>
+    <file src="bin\$Configuration$\Our.Umbraco.OpeningSoon.dll" target="lib\net472" />
+    <file src="Views\**\*" target="content\Views" />
+    <file src="App_Plugins\OpeningSoon\**\*.*" target="content\App_Plugins\OpeningSoon" />
+  </files>
+</package>

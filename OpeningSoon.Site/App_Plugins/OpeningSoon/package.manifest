@@ -1,0 +1,56 @@
+{
+  "propertyEditors": [
+    {
+      "alias": "Our.Umbraco.OpeningSoon",
+      "name": "Opening Soon",
+      "icon": "icon-time",
+      "group": "lists",
+      "editor": {
+        "valueType": "JSON",
+        "view": "~/App_plugins/OpeningSoon/OpeningSoon.html"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Enable Second Times",
+            "description": "Give a second set of hours for each day",
+            "key": "secondSet",
+            "view": "boolean"
+          },
+          {
+            "label": "Time step",
+            "description": "Number of minutes between each value",
+            "key": "dropdownTimestep",
+            "view": "number"
+          },
+          {
+            "label": "Enable clear button",
+            "description": "lets the editor clear everything in one go",
+            "key": "enableClear",
+            "view": "boolean"
+          },
+          {
+            "label": "Enable autofill",
+            "description": "button to fill everthing with the same values as monday has",
+            "key": "enableAutofill",
+            "view": "boolean"
+          }
+        ]
+      },
+      "defaultConfig": {
+        "secondSet": false,
+        "dropdownTimestep": 30,
+        "enableAutoFill": 1,
+        "enableClear": 1
+      }
+    }
+  ],
+  "javascript": [
+    "~/App_Plugins/OpeningSoon/libs/jquery.timepicker.min.js",
+    "~/App_Plugins/OpeningSoon/timePickerDirective.js",
+    "~/App_Plugins/OpeningSoon/openingSoonController.js"
+  ],
+  "css": [
+    "~/App_Plugins/OpeningSoon/openingsoon.css"
+  ]
+}
