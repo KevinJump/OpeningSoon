@@ -1,6 +1,6 @@
 @echo off 
 
 @Echo Packaging
-nuget pack ..\Our.Umbraco.OpeningSoon\Jumoo.OpeningSoon.nuspec -build  -OutputDirectory %1 -version %1 -properties "depends=%1;Configuration=release"
+dotnet pack ..\Our.Umbraco.OpeningSoon\Our.Umbraco.OpeningSoon.csproj  --output %1 --version-suffix %1 --configuration release
 
 XCOPY %1\*.nupkg c:\source\localgit /y

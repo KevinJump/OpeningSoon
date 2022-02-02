@@ -1,15 +1,13 @@
 ﻿using Newtonsoft.Json;
-
 using System.Collections;
 using System.Collections.Generic;
-
-using Umbraco.Core;
+using Umbraco.Extensions;
 
 namespace Our.Umbraco.OpeningSoon
 {
     public class OpeningSoonModel : IEnumerable<OpeningTime>
     {
-        public IEnumerable<OpeningTime> OpeningTimes { get; set; }
+        public IEnumerable<OpeningTime>? OpeningTimes { get; set; }
 
         public IEnumerator<OpeningTime> GetEnumerator()
             => this.OpeningTimes.GetEnumerator();
@@ -17,9 +15,9 @@ namespace Our.Umbraco.OpeningSoon
         IEnumerator IEnumerable.GetEnumerator()
             => this.GetEnumerator();
 
-        public static OpeningSoonModel Deserialize(string json)
+        public static OpeningSoonModel? Deserialize(string json)
         {
-            if (string.IsNullOrEmpty(json) || !json.DetectIsJson()) 
+            if (string.IsNullOrEmpty(json) || !json.DetectIsJson())
                 return null;
 
             var items = JsonConvert.DeserializeObject<IEnumerable<OpeningTime>>(json);
