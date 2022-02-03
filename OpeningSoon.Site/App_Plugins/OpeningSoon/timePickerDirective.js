@@ -15,7 +15,7 @@
                     });
 
                 element.on('change', function () {
-                    scope.$appy(function () {
+                    scope.$apply(function () {
 
                         var myTime = element.timepicker('getTime', new Date());
                         var timeString =
